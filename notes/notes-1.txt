@@ -1,0 +1,33 @@
+Notes for Episode 1:
+
+    Important URLs:
+        Tailwind guide for create-react-app: https://tailwindcss.com/docs/guides/create-react-app
+        
+
+    Important Commands:
+        Terminal Commands:
+            > npx create-react-app <project-name>
+            // command to create a react app from scratch 
+
+            // the below 4 commands are automatically configured by create-react-app
+
+                > npm start
+                // Starts the development server.
+
+                > npm run build
+                // Bundles the app into static files for production.
+
+                > npm test
+                // Starts the test runner.
+
+                > npm run eject
+                // Removes this tool and copies build dependencies, configuration files
+                // and scripts into the app directory. If you do this, you can’t go back!
+
+    Important Note Points:
+
+    Notes:
+        1.  create-react-app uses Webpack bundler behind the scenes. 
+            We have used Parcel bundler in Swiggy App.
+
+        2. 
