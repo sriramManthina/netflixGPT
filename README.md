@@ -4,6 +4,8 @@
 
 - Create React App
 - Configured Tailwind
+- Header
+- Login Form
 
 
 ## Key Features
@@ -20,4 +22,4 @@
       - Movie Lists * n
 - Netflix GPT
   - Search Bar
-  -
+  - Movie Suggestions

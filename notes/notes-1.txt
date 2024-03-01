@@ -1,8 +1,12 @@
 Notes for Episode 1:
 
+    Installed packages:
+        react-router-dom: used for routing in react
+
+
     Important URLs:
         Tailwind guide for create-react-app: https://tailwindcss.com/docs/guides/create-react-app
-        
+        Formik to create React Forms easily: https://formik.org/
 
     Important Commands:
         Terminal Commands:
