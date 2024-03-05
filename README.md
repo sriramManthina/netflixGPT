@@ -4,11 +4,20 @@
 
 - Create React App
 - Configured Tailwind
+- Basic Routing
 - Header
-- Login Form
+- Sign In / Sign Up Form
+- Form Validation
+- Firebase Setup
+- Hosting the App : [https://netflix-gpt-24c07.web.app/](https://https://netflix-gpt-24c07.web.app/)
+- Implemented basic form validations with corresponding error message
+- Implemented SignUp / SignIn APIs using Firebase Authentication
+- Created a redux Store to save user Data
+- Added UserName into Firebase (updateProfile) and redux store along with username and password
+- Make UserName visile on Header
+- Implemented Signout
 
-
-## Key Features
+## Key Features 
 
 - Login / Sign Up
   - Sign in / Sign Up Form

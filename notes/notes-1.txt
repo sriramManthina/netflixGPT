@@ -1,12 +1,21 @@
 Notes for Episode 1:
+    User Data: 
+    'noOnek4367osJPfF@gmail.cpm' 'noOne@1234'
 
     Installed packages:
         react-router-dom: used for routing in react
 
-
     Important URLs:
+        App URL: https://netflix-gpt-24c07.web.app/ (Use Brave)
+        Firebase Console URL for app: https://console.firebase.google.com/project/netflix-gpt-24c07/overview
+
         Tailwind guide for create-react-app: https://tailwindcss.com/docs/guides/create-react-app
         Formik to create React Forms easily: https://formik.org/
+        
+        Firebase signIn / signUp Docs Link: https://firebase.google.com/docs/auth/web/start
+        Firbase onAuthStateChanged Doc Link: https://firebase.google.com/docs/auth/web/manage-users
+
+
 
     Important Commands:
         Terminal Commands:
@@ -27,8 +36,71 @@ Notes for Episode 1:
                 > npm run eject
                 // Removes this tool and copies build dependencies, configuration files
                 // and scripts into the app directory. If you do this, you can’t go back!
+            
+            firebase commands:
+                > npm install firebase
+
+                // firebase CLI for firebase hosting
+                > npm install -g firebase-tools
+
+                // to deploy type these 3 commands
+                > firebase login
+                > firebase init 
+                // these are the answers to be selected
+                    ? Are you ready to proceed? Yes
+                    ? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your choices.      
+                    Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
+
+                    === Project Setup
+
+                    First, let's associate this project directory with a Firebase project.
+                    You can create multiple project aliases by running firebase use --add,
+                    but for now we'll just set up a default project.
+
+                    ? Please select an option: Use an existing project
+                    ? Select a default Firebase project for this directory: netflix-gpt-24c07 (Netflix-GPT)
+                    i  Using project netflix-gpt-24c07 (Netflix-GPT)
+
+                    === Hosting Setup
+
+                    Your public directory is the folder (relative to your project directory) that
+                    will contain Hosting assets to be uploaded with firebase deploy. If you
+                    have a build process for your assets, use your build's output directory.
+
+                    ? What do you want to use as your public directory? build
+                    ? Configure as a single-page app (rewrite all urls to /index.html)? No
+                    ? Set up automatic builds and deploys with GitHub? No
+                    +  Wrote build/404.html
+                    +  Wrote build/index.html
+
+                    i  Writing configuration info to firebase.json...
+                    i  Writing project information to .firebaserc...
+
+                    +  Firebase initialization complete!
+
+                // before this command build the app Using 
+                    > npm run build
+                > firebase deploy
+            
+            redux commands:
+
+                // install react-redux and redux-toolkit
+                > npm i react-redux
+                > npm i -D @reduxjs/toolkit
+
+                create a store at ./utils/appStore
+                create a slice at ./utils/userSlice
+                add a provider with the appStore to App.js
+                use the reducer methods as and when required
 
     Important Note Points:
+        useRef Hook:
+            Used to reference some DOM Element.
+
+            useRef is a React Hook that allows you to create a mutable ref object whose .current property can hold a value. 
+            It persists between renders and does not trigger re-renders when it's mutated.
+
+            It's commonly used in various scenarios, such as managing focus, accessing DOM elements, and storing previous values.
 
     Notes:
         1.  create-react-app uses Webpack bundler behind the scenes. 
