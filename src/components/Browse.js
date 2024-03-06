@@ -4,13 +4,19 @@ import Header from './Header'
 import MainContainer from './MainContainer'
 import SecondaryContainer from './SecondaryContainer'
 import useNowPlaying from '../hooks/useNowPlaying'
+import usePopular from '../hooks/usePopular'
+import useTopRated from '../hooks/useTopRated'
+import useUpComing from '../hooks/useUpComing'
 
 const Browse = () => {
   useNowPlaying()
+  usePopular()
+  useTopRated()
+  useUpComing()
   
 
   return (
-    <div>
+    <div className='bg-black'>
       <div className="flex justify-center">
         {/* Overlaying Gradient over the image */}
         <div className="absolute inset-0 aspect-video bg-gradient-to-t from-black to-black via-transparent"></div>

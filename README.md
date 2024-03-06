@@ -26,6 +26,9 @@
 - Custom Hook for getting now playing movies data and update in store
 - Custom Hook for getting movie trailer video data (YT key) and update in store
 - Embed YT video based on the video key in the URL and make it autoplay and mute
+- Built Secondary Component in Browse
+- Built Movie List with corresponding Movie Cards with their images from TMDB
+- Created more custom hooks for usePopular, useTopRated, useUpComing
 
 ## Key Features
 
