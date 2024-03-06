@@ -12,12 +12,22 @@
 - Hosting the App : [https://netflix-gpt-24c07.web.app/](https://https://netflix-gpt-24c07.web.app/)
 - Implemented basic form validations with corresponding error message
 - Implemented SignUp / SignIn APIs using Firebase Authentication
-- Created a redux Store to save user Data
+- Created a redux Store and a userSlice to save user Data
 - Added UserName into Firebase (updateProfile) and redux store along with username and password
 - Make UserName visile on Header
 - Implemented Signout
+- Implemented Routing to not access /browse without Logging In
+- Similarly re-direct to /browse if already logged in
+- unSubscribe to onAuthStateChanged every time Header Component is unMounted
+- Added Constants for HardCoded vlues
+- Request new API Key from TMDB
+- Fetch from TMDB movies
+- Created a moviesSlice to save movies Data
+- Custom Hook for getting now playing movies data and update in store
+- Custom Hook for getting movie trailer video data (YT key) and update in store
+- Embed YT video based on the video key in the URL and make it autoplay and mute
 
-## Key Features 
+## Key Features
 
 - Login / Sign Up
   - Sign in / Sign Up Form

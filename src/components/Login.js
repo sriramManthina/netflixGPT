@@ -1,5 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -9,10 +8,10 @@ import Header from './Header'
 import { validateFormData } from '../utils/validateForm'
 import { auth } from '../utils/firebase'
 import {addUser} from '../utils/userSlice'
+import { LOGIN_BG_IMG } from '../utils/constants';
 
 
 const Login = () => {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   
@@ -32,14 +31,13 @@ const Login = () => {
       signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value)
         .then((userCredential) => {
           // Signed in 
-          const user = userCredential.user;
+          // const user = userCredential.user;
           const {uid, email, displayName} = auth.currentUser
           dispatch(addUser({uid, email, displayName}))
-          navigate('/browse')
         })
         .catch((error) => {
           const errorCode = error.code;
-          const errorMessage = error.message;
+          // const errorMessage = error.message;
           if (errorCode === 'auth/invalid-credential')
             return setErrorMessage('Please re-check the Email and Password')
         });
@@ -56,7 +54,6 @@ const Login = () => {
             // use auth.currentUser to update data in userSlice from reduxStore
             const {uid, email, displayName} = auth.currentUser
             dispatch(addUser({uid, email, displayName}))
-            navigate('/browse')
           }).catch((error) => {
             setErrorMessage(error.message)
           });
@@ -81,7 +78,7 @@ const Login = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('https://assets.nflxext.com/ffe/siteui/vlv3/93da5c27-be66-427c-8b72-5cb39d275279/94eb5ad7-10d8-4cca-bf45-ac52e0a052c0/IN-en-20240226-popsignuptwoweeks-perspective_alpha_website_medium.jpg')",
+          backgroundImage: `url('${LOGIN_BG_IMG}')`,
         }}
       ></div>
       {/* Overlaying Gradient over the image */}

@@ -1,9 +1,8 @@
 Notes for Episode 1:
-    User Data: 
-    'noOnek4367osJPfF@gmail.cpm' 'noOne@1234'
-
     Installed packages:
         react-router-dom: used for routing in react
+        firebase: for authentication / deploying
+        react-redux: for creating redux stores
 
     Important URLs:
         App URL: https://netflix-gpt-24c07.web.app/ (Use Brave)

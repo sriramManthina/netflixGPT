@@ -1,0 +1,22 @@
+Notes for Episode 2:
+
+    Installed packages:
+
+    Important URLs:
+
+    Important Commands:
+
+        Terminal Commands:
+
+    Important Note Points:
+
+    Notes:
+        In index.js, create-react-app automatically gives the code:
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>
+
+        for react-StrictMode, due to this many events like fetch calls, redux operations happens twice (during development)
+        however during production it will only happen once. To remove this feature just take out React.StrictMode tags
+
+        React does this twice to compare the renders and throw errors if there are any inconsistencies (its a good thing)
