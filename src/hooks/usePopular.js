@@ -11,7 +11,7 @@ const usePopular = () => {
     const getPopularMovies = async () => {
         const data = await fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=2', TMDB_API_OPTIONS)
         const json = await data.json()
-        // console.log(json)
+
         dispatch(addPopular(json.results))
     } 
 

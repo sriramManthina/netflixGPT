@@ -1,0 +1,16 @@
+Notes for Episode 2:
+
+    Installed packages:
+
+    Important URLs:
+
+    Important Commands:
+
+        Terminal Commands:
+
+    Important Note Points:
+
+    Notes:
+        1.  GPT APIs are the APIs provided by OpenAI, ChatGPT is the UI on top of those APIs.
+            In this app, we will use those underlying GPT APIs for movie Recommendations.
+        2.  

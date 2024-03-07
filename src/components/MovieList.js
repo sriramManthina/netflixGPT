@@ -2,9 +2,6 @@ import React from 'react'
 import MovieCard from './MovieCard'
 
 const MovieList = ({title, movies}) => {
-
-    console.log(title, movies)
-
     const scrollbarStyles = {
         WebkitOverflowScrolling: 'touch', // Optional: Enables momentum scrolling on iOS devices
         scrollbarWidth: 'thin',

@@ -28,7 +28,11 @@
 - Embed YT video based on the video key in the URL and make it autoplay and mute
 - Built Secondary Component in Browse
 - Built Movie List with corresponding Movie Cards with their images from TMDB
-- Created more custom hooks for usePopular, useTopRated, useUpComing
+- Created more custom hooks for usePopular, useTopRated, useUpComing Movies Lists
+- Added GPT Search Page
+- Added GPT Seach Box
+- Added Multi-Language support (Only in Search Box for now)
+- Fetch Movie Suggestions from GPT APIs
 
 ## Key Features
 

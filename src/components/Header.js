@@ -5,7 +5,9 @@ import React, { useEffect } from 'react'
 import { auth } from '../utils/firebase'
 import { onAuthStateChanged, signOut } from "firebase/auth"
 import { addUser, removeUser } from '../utils/userSlice'
-import { HEADER_COMPANY_LOGO, HEADER_USER_LOGO } from '../utils/constants'
+import { toggleShowGptSearch } from '../utils/gptSlice'
+import { setUserPreferredLanguage } from '../utils/configSlice'
+import { HEADER_COMPANY_LOGO, HEADER_USER_LOGO, SUPPORTED_LANGUAGES } from '../utils/constants'
 
 const Header = () => {
   const navigate = useNavigate()
@@ -13,6 +15,9 @@ const Header = () => {
 
   // get userSlice data
   const user = useSelector((store) => store.user)
+  // get gptSlice data
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch)
+
 
   useEffect(() => { 
     // onAuthStateChanged is like an eventListener, called every time user is signedIn, signedOut
@@ -46,6 +51,14 @@ const Header = () => {
     });    
   }
 
+  const handleGptSearch = () => {
+    dispatch(toggleShowGptSearch())
+  }
+
+  const handleLanguageChange = (e) => {
+    dispatch(setUserPreferredLanguage(e.target.value))
+  }
+
   return (
     <div className='w-full h-fit flex justify-between '>
       <div id="logoSection" className='w-2/12'>
@@ -57,7 +70,17 @@ const Header = () => {
 
       { // only displayed when user doc is present ie in browse page (not in signIn page)
         user &&
-        <div id="headersSection" className='flex justify-end  text-white w-6/12 pr-8'>
+        <div id="headersSection" className='flex justify-end  text-white w-8/12 pr-8'>
+          <button onClick={handleGptSearch} className="mr-4 px-2 py-2 max-h-fit self-center bg-purple-800 rounded-lg hover:bg-purple-900">
+            {showGptSearch ? 'Home' : 'GPT-Search'}
+          </button>
+          {
+            showGptSearch &&
+            <select className='p-3 mr-4 max-h-fit rounded-lg self-center bg-gray-900 text-white'
+              onChange={handleLanguageChange}>
+              {SUPPORTED_LANGUAGES.map(lang => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
+          </select>
+          }
           <img
             className='w-12 self-center mr-4'
             src={ HEADER_USER_LOGO } 

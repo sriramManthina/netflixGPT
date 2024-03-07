@@ -9,5 +9,9 @@ export const TMDB_API_OPTIONS = {
     }
 }
 export const TMDB_IMG_URL_PREFIX = "https://image.tmdb.org/t/p/w500/"
-
   
+export const SUPPORTED_LANGUAGES = [
+    {identifier: "en", name: "English"},
+    {identifier: "te", name: "Telugu"},
+    {identifier: "es", name: "Spanish"}
+]
