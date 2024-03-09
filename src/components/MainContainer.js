@@ -6,12 +6,11 @@ import VideoBackground from './VideoBackground'
 
 const MainContainer = () => {
     const movies = useSelector((store) => store.movies.nowPlaying)
-    if (!movies.length) return // movies haven't been fetched yet from TMDB
+    if (!movies || !movies.length) return // movies haven't been fetched yet from TMDB
 
-    const mainMovie = movies[1]
+    const mainMovie = movies[3]
 
     const {original_title, overview, id} = mainMovie
-
 
     return (
         <div>

@@ -22,8 +22,6 @@ const Browse = () => {
   return (
     <div className='bg-black'>
       <div className="flex justify-center">
-        {/* Overlaying Gradient over the image */}
-        <div className="absolute inset-0 aspect-video bg-gradient-to-t from-black to-black via-transparent"></div>
 
         {/* Overlaying Header over the image */}
         <div className="absolute inset-0 w-11/12 mx-auto flex justify-center pt-2 z-20">

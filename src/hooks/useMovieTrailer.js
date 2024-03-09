@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import {addTrailerVideoKey} from '../utils/movieSlice'
 import { TMDB_API_OPTIONS } from '../utils/constants'
@@ -8,7 +8,8 @@ import { TMDB_API_OPTIONS } from '../utils/constants'
 const useMovieTrailer = (movieId) => {
     // receive a movieId
     // get the movieTrailerKey to load the video from YouTube and add it to Redux store
-
+    const { trailerVideoKey } = useSelector(state => state.movies)
+    // console.log(trailerVideoKey)
     const dispatch = useDispatch()
 
     const getTrailerKey = async () => {
@@ -20,7 +21,8 @@ const useMovieTrailer = (movieId) => {
     }
 
     useEffect(() => {
-        getTrailerKey()
+        // if there is no trailerVideoKey, only then fetch it.
+        if (!trailerVideoKey) getTrailerKey()
     }, [])
 }
 

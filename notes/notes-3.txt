@@ -3,14 +3,28 @@ Notes for Episode 2:
     Installed packages:
 
     Important URLs:
+        create API key in OpenAI:
+            https://platform.openai.com/api-keys
+        
+
 
     Important Commands:
 
         Terminal Commands:
+            npm i --save openai
+
 
     Important Note Points:
+        Environment variables:
+            1.  To save environment variables, create .env file
+            2.  All names in the file must be prefixed with REACT_APP
+
+        Memoizing:
+            1. Instead of making fetch call directly by calling getTrailerKey (in useMovieTrailer hook), we will first check if (!trailerVideoKey)
+            2. This way, We will only make the fetch call once (for every reload when redux store becomes empty). 
+            3. And for every page changes, the fetch call need not be made, hence a great optimization with significantly reduced number of fetches.
 
     Notes:
         1.  GPT APIs are the APIs provided by OpenAI, ChatGPT is the UI on top of those APIs.
             In this app, we will use those underlying GPT APIs for movie Recommendations.
-        2.  
+        

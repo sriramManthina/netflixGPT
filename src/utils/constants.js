@@ -5,7 +5,7 @@ export const TMDB_API_OPTIONS = {
     method: 'GET',
     headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMWU2NjcxNDQ4YzcxZDY4MTA0ZDlhMGY1ZWU0N2U0ZSIsInN1YiI6IjY1ZTdjNTZlMzQ0YThlMDE3ZDNlNjY0OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ZWyNMwCsGQLMwjHB8TJP47M_LjY_eKuR4_joe9Z9ErI'
+        Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_API_KEY
     }
 }
 export const TMDB_IMG_URL_PREFIX = "https://image.tmdb.org/t/p/w500/"
@@ -15,3 +15,5 @@ export const SUPPORTED_LANGUAGES = [
     {identifier: "te", name: "Telugu"},
     {identifier: "es", name: "Spanish"}
 ]
+
+export const OPEN_AI_KEY = process.env.REACT_APP_OPEN_AI_KEY
