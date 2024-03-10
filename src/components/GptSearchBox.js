@@ -56,15 +56,15 @@ const GptSearchBox = () => {
   }
 
   return (
-    <div className='flex justify-center w-full'>
-      <form className='w-2/3 flex justify-center' onSubmit={(e) => e.preventDefault()}>
+    <div className='flex justify-center w-full '>
+      <form className='w-full md:w-2/3 flex flex-wrap justify-center p-4' onSubmit={(e) => e.preventDefault()}>
         <input 
         ref={searchBox}
-        className='p-4 w-9/12 rounded-l-lg text-black'
+        className='p-4 md:w-9/12 w-full rounded-md md:rounded-l-lg md:rounded-r-none mb-2 md:mb-0 text-black'
         type="text"
         placeholder={langData[userLang].gptSearchPlaceHolder}
         />
-        <button className='p-4 w-2/12 bg-red-500 text-white rounded-r-lg' onClick={handleGptSearchBoxClick}>{langData[userLang].search}</button>
+        <button className='p-4 md:w-2/12 w-full bg-red-500 text-white rounded-md md:rounded-r-lg md:rounded-l-none' onClick={handleGptSearchBoxClick}>{langData[userLang].search}</button>
       </form>
     </div>
   )

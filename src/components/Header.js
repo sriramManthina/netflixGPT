@@ -60,20 +60,17 @@ const Header = () => {
   }
 
   return (
-    <div className='w-full h-fit flex justify-between '>
-      <div id="logoSection" className='w-2/12'>
+    <div className='w-full h-fit flex justify-between flex-col md:flex-row md:pl-4'>
+      <div id="logoSection" className='mx-auto md:m-0'>
         <img 
-          className='w-44'
+          className='w-24  md:w-44'
           src={ HEADER_COMPANY_LOGO } 
           alt="logo" />
       </div>
 
       { // only displayed when user doc is present ie in browse page (not in signIn page)
         user &&
-        <div id="headersSection" className='flex justify-end  text-white w-8/12 pr-8'>
-          <button onClick={handleGptSearch} className="mr-4 px-2 py-2 max-h-fit self-center bg-purple-800 rounded-lg hover:bg-purple-900">
-            {showGptSearch ? 'Home' : 'GPT-Search'}
-          </button>
+        <div id="headersSection" className='flex justify-center md:justify-end text-white w-full md:w-8/12 pr-8'>
           {
             showGptSearch &&
             <select className='p-3 mr-4 max-h-fit rounded-lg self-center bg-gray-900 text-white'
@@ -81,12 +78,15 @@ const Header = () => {
               {SUPPORTED_LANGUAGES.map(lang => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
           </select>
           }
-          <img
+          <button onClick={handleGptSearch} className="mr-4 px-2 py-2 max-h-fit self-center">
+            {showGptSearch ? 'Home' : 'GPT-Search'}
+          </button>
+          {/* <img
             className='w-12 self-center mr-4'
             src={ HEADER_USER_LOGO } 
-            alt="userLogo" />
-            <p className="mr-4 self-center">{user?.displayName}</p>
-          <button onClick={handleSignOut} className="font-bold">Sign Out</button>
+            alt="userLogo" /> */}
+            {/* <p className="mr-4 self-center">{user?.displayName}</p> */}
+          <button onClick={handleSignOut} >Sign Out</button>
         </div>
       }
       

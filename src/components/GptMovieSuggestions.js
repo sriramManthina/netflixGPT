@@ -10,7 +10,7 @@ const GptMovieSuggestions = () => {
   if(!gptMovieResults) return  
  
   return (
-    <div className='w-11/12 text-white z-40 font-bold bg-black bg-opacity-75'>
+    <div className='w-11/12 text-white z-40 font-bold bg-black bg-opacity-75 p-4'>
       <h1 className='text-xl p-4'>{"Showing " + gptMovieResults.length + " Results for " + gptMovieNames}</h1>    
       <div className='flex justify-center'>
         <div className='flex flex-wrap justify-center'>

@@ -24,7 +24,7 @@ const Browse = () => {
       <div className="flex justify-center">
 
         {/* Overlaying Header over the image */}
-        <div className="absolute inset-0 w-11/12 mx-auto flex justify-center pt-2 z-20">
+        <div className="absolute w-full z-20">
           <Header/>
         </div>
         

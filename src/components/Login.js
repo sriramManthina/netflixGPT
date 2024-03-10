@@ -76,64 +76,67 @@ const Login = () => {
   return (
     <div className="relative h-screen">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="fixed top-0 left-0 inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url('${LOGIN_BG_IMG}')`,
         }}
       ></div>
       {/* Overlaying Gradient over the image */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black to-black via-transparent"></div>
+      <div className="fixed inset-0 bg-gradient-to-t from-black to-black via-transparent"></div>
+        
+      <div className="flex flex-col absolute w-full h-screen p-4">
+        {/* Overlaying Header over the image */}
+        <div className="w-full">
+          <Header/>
+        </div>
 
-      {/* Overlaying Header over the image */}
-      <div className="absolute inset-0 w-9/12 mx-auto flex justify-center pt-2">
-        <Header/>
-      </div>
-
-      {/* Overlaying Form over the image */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <form onSubmit={(e) => e.preventDefault()}
-          className='w-3/12 flex flex-wrap justify-center rounded-md text-white bg-black bg-opacity-70'>
-          <div className="w-9/12 py-12">
-            <div className="w-full mb-8">
-              <h1 className='font-semibold text-3xl'>
-                {isSignInForm ? 'Sign In' : 'Sign Up'}
-              </h1>
-            </div>
-            { !isSignInForm && (
-            
-            <div className="w-full mt-4">
-            <input type="text" placeholder='Username' ref={userNameRef}
-            className='px-4 py-3 w-full rounded-md bg-slate-800 text-slate-400'/>
-            </div>
-            
-            )}
-            <div className="w-full mt-4">
-              <input type="text" placeholder='Email Address' ref={emailRef} 
+        {/* Overlaying Form over the image */}
+        <div className="flex flex-grow items-center justify-center w-full">
+          <form onSubmit={(e) => e.preventDefault()}
+            className='w-full md:w-3/12 flex flex-wrap justify-center rounded-md text-white bg-black bg-opacity-70'>
+            <div className="w-9/12 py-12">
+              <div className="w-full mb-8">
+                <h1 className='font-semibold text-3xl'>
+                  {isSignInForm ? 'Sign In' : 'Sign Up'}
+                </h1>
+              </div>
+              { !isSignInForm && (
+              
+              <div className="w-full mt-4">
+              <input type="text" placeholder='Username' ref={userNameRef}
               className='px-4 py-3 w-full rounded-md bg-slate-800 text-slate-400'/>
+              </div>
+              
+              )}
+              <div className="w-full mt-4">
+                <input type="text" placeholder='Email Address' ref={emailRef} 
+                className='px-4 py-3 w-full rounded-md bg-slate-800 text-slate-400'/>
+              </div>
+              <div className="w-full mt-4">
+                <input type="password" placeholder='Password' ref={passwordRef}
+                className='px-4 py-3 w-full rounded-md bg-slate-800 text-slate-400'/>
+              </div>
+              <div className="w-full mt-4">
+                <p className='text-red-600'>{errorMessage}</p>
+              </div>
+              <div className="w-full mt-8">
+                <button type='submit' onClick={handleButtonClick} 
+                  className="py-3 w-full rounded-md bg-red-600">
+                  {isSignInForm ? 'Sign In' : 'Sign Up'}
+                </button>
+              </div>
+              <div className="w-full mt-10">
+                <p className='' onClick={handleLinkClick}>
+                  {isSignInForm ? 
+                    'New to Netflix? Sign up now.' : 
+                    'Already Registered? Sign in now'}
+                </p>
+              </div>
             </div>
-            <div className="w-full mt-4">
-              <input type="password" placeholder='Password' ref={passwordRef}
-              className='px-4 py-3 w-full rounded-md bg-slate-800 text-slate-400'/>
-            </div>
-            <div className="w-full mt-4">
-              <p className='text-red-600'>{errorMessage}</p>
-            </div>
-            <div className="w-full mt-8">
-              <button type='submit' onClick={handleButtonClick} 
-                className="py-3 w-full rounded-md bg-red-600">
-                {isSignInForm ? 'Sign In' : 'Sign Up'}
-              </button>
-            </div>
-            <div className="w-full mt-10">
-              <p className='' onClick={handleLinkClick}>
-                {isSignInForm ? 
-                  'New to Netflix? Sign up now.' : 
-                  'Already Registered? Sign in now'}
-              </p>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
+      
 
 
     </div>

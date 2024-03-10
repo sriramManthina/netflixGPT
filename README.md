@@ -38,7 +38,7 @@
 - Added the Envt Variables for OPEN_AI and TMDB API keys
 - Added Memoization to prevent multiple calls for each page change for fetching
   - Trailer Key / NowPlaying / Popular / TopRated / UpComing data in movie slice
--
+- Added Mobile Responsive Changes
 
 ## Key Features
 

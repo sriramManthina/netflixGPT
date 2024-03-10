@@ -21,7 +21,7 @@ const GptSearch = () => {
         <div className='w-full z-20'>
           <GptSearchBox />
         </div>
-        <div className='w-full flex justify-center mt-8'>
+        <div className='w-full flex justify-center py-8'>
           <GptMovieSuggestions />
         </div>
       </div>
