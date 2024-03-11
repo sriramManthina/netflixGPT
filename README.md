@@ -1,6 +1,28 @@
 # Netflix GPT
 
-## Key Steps
+## Key Features
+
+- Login / Sign Up
+  - Sign in / Sign Up Form
+  - Redirect to Browse Page once Logged in
+- Browser Page (After Authentication)
+  - Header
+    - Home 
+    - GPT-Search
+    - Logout   
+  - Home Page
+    - Trailer in Background (Not in Mobile View)
+    - Title and Description of the Trailer (Not in Mobile View)
+    - Basic Movie Suggestions 
+      - Now Playing
+      - Top Rated
+      - Up Coming
+      - Popular
+  - GPT Search Page
+    - Search Bar (Query Sent to OpenAI API) (The results of the query is search in entire TMDB API)
+    - Movie Suggestions (returned from TMDB API)
+
+## Key Steps (Development)
 
 - Create React App
 - Configured Tailwind
@@ -9,7 +31,7 @@
 - Sign In / Sign Up Form
 - Form Validation
 - Firebase Setup
-- Hosting the App : [https://netflix-gpt-24c07.web.app/](https://https://netflix-gpt-24c07.web.app/)
+- Hosting the App : [https://netflix-gpt-24c07.web.app/](https://netflixgpt-tlwc.onrender.com/browse)
 - Implemented basic form validations with corresponding error message
 - Implemented SignUp / SignIn APIs using Firebase Authentication
 - Created a redux Store and a userSlice to save user Data
@@ -40,18 +62,3 @@
   - Trailer Key / NowPlaying / Popular / TopRated / UpComing data in movie slice
 - Added Mobile Responsive Changes
 
-## Key Features
-
-- Login / Sign Up
-  - Sign in / Sign Up Form
-  - Redirect to Browse Page once Logged in
-- Browser Page (After Authentication)
-  - Header
-  - Main Movie
-    - Trailer in Background
-    - Title and Description
-    - Movie Suggestions
-      - Movie Lists * n
-- Netflix GPT
-  - Search Bar
-  - Movie Suggestions
